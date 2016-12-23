@@ -4,7 +4,8 @@ import com.typesafe.config.{ ConfigFactory => Confy }
 
 object Scratch {
 
-  def main ( args:Array[String] ) = {
+  //def main ( args:Array[String] ) = {
+  def main  = {
 
 		val c = Confy.load()
 		val seed = c.getString("seed.conf")
