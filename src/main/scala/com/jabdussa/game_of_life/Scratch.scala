@@ -1,15 +1,15 @@
 import Console.{ println => p }
-import com.typesafe.config.{ ConfigFactory => Conf }
+import com.typesafe.config.{ ConfigFactory => Confy }
 
 
 object Scratch {
 
   def main ( args:Array[String] ) = {
 
-		val conf = Conf.load()
-		val seed = conf.getString("seed.conf")
-		val rest = conf.getInt("tick.rest")
-		val pace = conf.getInt("tick.pace")
+		val c = Confy.load()
+		val seed = c.getString("seed.conf")
+		val rest = c.getInt("tick.rest")
+		val pace = c.getInt("tick.pace")
 
 		p (s" seed = $seed")
 		p (s" rest = $rest")
