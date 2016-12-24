@@ -1,4 +1,5 @@
-package com.jabdussa.game_of_life
+package com.jabdussa.examples.game_of_life
+
 
 /**
   *  A singleton bcuz you only get one ;)

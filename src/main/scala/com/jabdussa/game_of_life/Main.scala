@@ -1,42 +1,42 @@
-package com.jabdussa.game_of_life
+package com.jabdussa.examples.game_of_life
 
 
 import com.typesafe.config.ConfigFactory
 import scala.io.Source.{ fromFile => open }
 import scala.collection.mutable.ListBuffer
-//import scala.io.BufferedSource.{ getLines => chew }
-//import scala.io.Source.{ getLines => chew }
 import Console.{ println => p }
+import com.jabdussa.examples.game_of_life.Utils.{ d => d }
+
 
 
 object Main {
 
 	def main(args: Array[String]) = {
 
-		val data = open(Conf.seed)
+		d(Conf.show)
 
-		val seed = new ListBuffer[Cell]()
-
+		val eden = open(Conf.cells)
+		val cells = new ListBuffer[Cell]()
 		var maxRow, maxCol = 0
 
-			for (line <- data.getLines) {
-				val r = line.split(",").map(_.trim)
-				val row = r(0).toInt
-				val col = r(1).toInt
-				if (row > maxRow) { maxRow = row }
-				if (col > maxCol) { maxCol = col }
-				seed += new Cell(row, col, true)
-			}
+		//for (line <- eden.explore) {
+		for (line <- eden.getLines) {
+			val r = line.split(",").map(_.trim)
+			val row = r(0).toInt
+			val col = r(1).toInt
+			if (row > maxRow) { maxRow = row }
+			if (col > maxCol) { maxCol = col }
+			cells += new Cell(row, col, true)
+		}
 
-		p (s"not sorted = $seed")
+		val cellsSorted = collection.SortedSet(cells: _*)
 
-		val seedSorted = collection.SortedSet(seed: _*)
+		d(s"initial cells = $cells")
+		d(s"sorted cells  = $cellsSorted")
+		d(s"maxRow = $maxRow")
+		d(s"maxCol = $maxCol")
 
-		p (s"sorted =     $seedSorted")
-
-		p (s"maxRow=$maxRow")
-
-		p (s"maxCol=$maxCol")
+		val b = new GameBoard(cellsSorted, maxRow, maxCol)
 
   }
 

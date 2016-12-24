@@ -1,4 +1,4 @@
-package com.jabdussa.game_of_life
+package com.jabdussa.examples.game_of_life
 
 case class Cell (row: Int, col: Int, alive: Boolean) extends Ordered [Cell] {
 
@@ -12,7 +12,7 @@ case class Cell (row: Int, col: Int, alive: Boolean) extends Ordered [Cell] {
         1
       else if (this.row > that.row)
         1
-      else if ((this.row < that.row) && (this.col > that.col))  
+      else if ((this.row < that.row) && (this.col > that.col))
         -1
       else
         -1

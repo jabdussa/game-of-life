@@ -1,6 +1,8 @@
-package com.jabdussa.game_of_life
+package com.jabdussa.examples.game_of_life
 
-class GameBoard(cells:List[Cell]) {
+import scala.collection.SortedSet
+
+class GameBoard(cells:SortedSet[Cell], maxRow:Int, maxCol:Int) {
 
 	def paint = ???
 
