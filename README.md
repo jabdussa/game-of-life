@@ -31,3 +31,10 @@ and the discrete moment at which this happens is sometimes called a tick
 
 The rules continue to be applied repeatedly to create further generations.
 
+
+## ~/.sbt/0.13/global.sbt
+
+#### cat ~/.sbt/0.13/global.sbt
+#### offline := true
+####
+#### resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases"
