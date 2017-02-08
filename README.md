@@ -1,15 +1,14 @@
-# game-of-life
-Conway's Game Of Life
+## Conway's Game Of Life (in Scala)
 
-## Under Population
-Any live cell with fewer than two live neighbours dies, as if by needs caused by underpopulation.
+## Underpopulation
+Any live cell with fewer than two live neighbours dies, as if by underpopulation.
 
-## Over Populiation
+## Overpopulation
 Any live cell with more than three live neighbours dies, as if by overcrowding.
 
-## Continuity
+## Community / Continuity
 Any live cell with two or three live neighbours lives, unchanged, to the next generation.
 
-## Birth
+## Birth / Rebirth
 Any dead cell with exactly three live neighbours cells will come to life.
 
